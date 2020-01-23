@@ -48,12 +48,12 @@
   };
 </script>
 
-  <meta name="description" content="接口与实现模块分为“接口”和“实现”两个部分。接口规定了模块做什么，即模块的功能；实现则指明模块如何完成接口定义的功能。 客户程序是使用模块的一段代码。客户端导入接口，实现则导出接口。客户程序仅需要看到接口即可。 客户程序和模块实现的具体细节的依赖称为耦合。使用接口和实现分离的方式，有助于减少耦合。">
+  <meta name="description" content="接口与实现模块分为“接口”和“实现”两个部分。接口规定了模块做什么，即模块的功能；实现则指明模块如何完成接口定义的功能。客户程序是使用模块的一段代码。客户端导入接口，实现则导出接口。客户程序仅需要看到接口即可。客户程序和模块实现的具体细节的依赖称为耦合。使用接口和实现分离的方式，有助于减少耦合。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="接口和实现">
 <meta property="og:url" content="http://yoursite.com/2020/01/03/%E6%8E%A5%E5%8F%A3%E5%92%8C%E5%AE%9E%E7%8E%B0/index.html">
 <meta property="og:site_name" content="人间有味是清欢">
-<meta property="og:description" content="接口与实现模块分为“接口”和“实现”两个部分。接口规定了模块做什么，即模块的功能；实现则指明模块如何完成接口定义的功能。 客户程序是使用模块的一段代码。客户端导入接口，实现则导出接口。客户程序仅需要看到接口即可。 客户程序和模块实现的具体细节的依赖称为耦合。使用接口和实现分离的方式，有助于减少耦合。">
+<meta property="og:description" content="接口与实现模块分为“接口”和“实现”两个部分。接口规定了模块做什么，即模块的功能；实现则指明模块如何完成接口定义的功能。客户程序是使用模块的一段代码。客户端导入接口，实现则导出接口。客户程序仅需要看到接口即可。客户程序和模块实现的具体细节的依赖称为耦合。使用接口和实现分离的方式，有助于减少耦合。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-02T21:41:35.000Z">
 <meta property="article:modified_time" content="2020-01-03T09:47:48.000Z">
@@ -242,45 +242,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="接口与实现"><a href="#接口与实现" class="headerlink" title="接口与实现"></a>接口与实现</h2><p>模块分为“接口”和“实现”两个部分。接口规定了模块做什么，即模块的功能；实现则指明模块如何完成接口定义的功能。
-客户程序是使用模块的一段代码。客户端导入接口，实现则导出接口。客户程序仅需要看到接口即可。
-客户程序和模块实现的具体细节的依赖称为耦合。使用接口和实现分离的方式，有助于减少耦合。</p>
+        <h2 id="接口与实现"><a href="#接口与实现" class="headerlink" title="接口与实现"></a>接口与实现</h2><p>模块分为“接口”和“实现”两个部分。接口规定了模块做什么，即模块的功能；实现则指明模块如何完成接口定义的功能。<br>客户程序是使用模块的一段代码。客户端导入接口，实现则导出接口。客户程序仅需要看到接口即可。<br>客户程序和模块实现的具体细节的依赖称为耦合。使用接口和实现分离的方式，有助于减少耦合。</p>
 <a id="more"></a>
-
-<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>C语言中，接口通过头文件指定，头文件中会声明客户程序可能使用的<strong>宏、类型、数据结构、变量和函数</strong>。客户程序使用
-<code>#include</code>导入接口。</p>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>实现导出接口。接口定义了必要的变量和函数，以提供接口实现的必要功能。
-实现具体解释了接口的语意，并给出了其表示细节和算法，理想情况下，客户程序不需要看到这些细节。
-不同的客户程序可以共享实现，通常是从动态库中加载实现的目标代码。
-一个接口可以有多个实现，可以在完全不影响客户程序的前提下，修改模块的实现。</p>
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>C语言中，接口通过头文件指定，头文件中会声明客户程序可能使用的<strong>宏、类型、数据结构、变量和函数</strong>。客户程序使用<br><code>#include</code>导入接口。</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>实现导出接口。接口定义了必要的变量和函数，以提供接口实现的必要功能。<br>实现具体解释了接口的语意，并给出了其表示细节和算法，理想情况下，客户程序不需要看到这些细节。<br>不同的客户程序可以共享实现，通常是从动态库中加载实现的目标代码。<br>一个接口可以有多个实现，可以在完全不影响客户程序的前提下，修改模块的实现。</p>
 <p>C语言中一个实现通常由一个或多个<code>.c</code>文件完成。实现通常会包含接口的<code>.h</code>文件，以确保实现与接口的声明一致。</p>
 <h3 id="抽象数据类型"><a href="#抽象数据类型" class="headerlink" title="抽象数据类型"></a>抽象数据类型</h3><p>一个抽象数据类型是一个接口，它定义了一个数据<strong>类型</strong>和对该类型的值的<strong>操作</strong>。操作不会暴露类型的表示细节。</p>
 <h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// stack.h</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> STACK_INCLUDED</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> STACK_INCLUDED</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> T Stack_T</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">T</span> *<span class="title">T</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">extern</span> T <span class="title">Stack_new</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">int</span> <span class="title">Stack_empty</span><span class="params">(T stk)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">Stack_push</span><span class="params">(T stk, <span class="keyword">void</span> *x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">void</span>* <span class="title">Stack_pop</span><span class="params">(T stk)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">Stack_free</span><span class="params">(T *stk)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">undef</span> T</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// STACK_INCLUDED</span></span></span><br></pre></td></tr></table></figure>
-
 <blockquote>
-<p>T指的总是接口中主要的数据类型。但客户端程序必须使用<code>Stack_T</code>，原因是stack.h末尾的<code>#undef T</code>指令删除了上
-述的缩写。
-ADT(抽象数据类型)使用不透明指针表示时，接口导出的类型是一个指针类型，这也是<code>Stack_T</code>通过typedef定一为指
-向<code>struct Stack_T</code>的指针的原因。</p>
+<p>T指的总是接口中主要的数据类型。但客户端程序必须使用<code>Stack_T</code>，原因是stack.h末尾的<code>#undef T</code>指令删除了上<br>述的缩写。<br>ADT(抽象数据类型)使用不透明指针表示时，接口导出的类型是一个指针类型，这也是<code>Stack_T</code>通过typedef定一为指<br>向<code>struct Stack_T</code>的指针的原因。</p>
 </blockquote>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// stack.c</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;assert.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;mem.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> T Stack_T</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">T</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> count;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">elem</span> &#123;</span></span><br><span class="line">        <span class="keyword">void</span> *x;</span><br><span class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">elem</span> *<span class="title">link</span>;</span></span><br><span class="line">    &#125;*head;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">T <span class="title">Stack_new</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    T stk = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="comment">// printf("stack.c: sizeof(T) = %lu\n", sizeof(*stk));</span></span><br><span class="line">    stk = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(*stk));</span><br><span class="line">    stk-&gt;count = <span class="number">0</span>;</span><br><span class="line">    stk-&gt;head = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> stk;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Stack_empty</span><span class="params">(T stk)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (stk != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> stk-&gt;count == <span class="number">0</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Stack_push</span><span class="params">(T stk, <span class="keyword">void</span>* x)</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">elem</span> *<span class="title">e</span>;</span></span><br><span class="line">    e = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(*e));</span><br><span class="line">    e-&gt;x = x;</span><br><span class="line">    e-&gt;link = stk-&gt;head;</span><br><span class="line">    stk-&gt;head = e;</span><br><span class="line">    ++stk-&gt;count;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span>* <span class="title">Stack_pop</span><span class="params">(T stk)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">void</span> *x;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">elem</span> *<span class="title">e</span>;</span></span><br><span class="line">    e = stk-&gt;head;</span><br><span class="line">    stk-&gt;head = e-&gt;link;</span><br><span class="line">    --stk-&gt;count;</span><br><span class="line">    x = e-&gt;x;</span><br><span class="line">    <span class="built_in">free</span>(e);</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Stack_free</span><span class="params">(T *stk)</span></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">elem</span> *<span class="title">t</span>, *<span class="title">u</span>;</span></span><br><span class="line">    <span class="keyword">for</span> (t=(*stk)-&gt;head; t; t=u) &#123;</span><br><span class="line">        u = t-&gt;link;</span><br><span class="line">        <span class="built_in">free</span>(t);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">free</span>(*stk);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上面的代码展示了接口和实现分离。接口规定了<code>Stack_T</code>提供的功能和使用方法，但是隐藏了<code>Stack_T</code>的实现。
-但是上面展示的代码的实现细节有许多问题，思考如下问题：</p>
+<p>上面的代码展示了接口和实现分离。接口规定了<code>Stack_T</code>提供的功能和使用方法，但是隐藏了<code>Stack_T</code>的实现。<br>但是上面展示的代码的实现细节有许多问题，思考如下问题：</p>
 <ul>
-<li><p>实现函数中，如何做传入参数的检查？如<code>Stack_push</code>中，<code>stk</code>可能为<code>NULL</code>；
-仅仅检查是否空指针是否足够?接口能控制传入的<code>stk</code>一定是<code>Stack_new</code>得到的<code>stk</code>么？如果不能，该如何改进？</p>
+<li><p>实现函数中，如何做传入参数的检查？如<code>Stack_push</code>中，<code>stk</code>可能为<code>NULL</code>；<br>仅仅检查是否空指针是否足够?接口能控制传入的<code>stk</code>一定是<code>Stack_new</code>得到的<code>stk</code>么？如果不能，该如何改进？</p>
 </li>
 <li><p><code>Stack_free(T* stk)</code>是否有必要写为<code>Stack_free(const T* stk)</code>?</p>
 </li>
 </ul>
-<p>对于第一个问题，指针的检查，是有必要的；如果想进一步确定<code>stk</code>是<code>Stack_new</code>得到的，可以修改<code>Struct_T</code>的实现，
-在其中增加一个标识位，检查该特殊的标识位置即可；但仍然不够优雅；</p>
-<p>对于第二个问题，首先<code>const T* stk</code>是错误的写法，这种写法试图将<code>stk</code>声明为一个<strong>指向<code>Struct T</code>的常量实例指针</strong>，
-因为<code>Stack_free</code>并不修改<code>*stk</code>。但是写法<code>const T* stk</code>将申明一个<strong>常量指针stk，指向一个Struct T实例</strong>。
-这是由于语句<code>typedef struct T* T</code>将<code>struct T*</code>打包成一个类型，这个指针类型成了<code>const</code>的操作数
-（const 修饰指针，指针就是常量，const修饰结构体，结构体实例就是常量）。由于函数调用值传递的特性，
-所以无论有没有<code>const</code>，<code>Stack_free</code>都无法改变调用者的实参值。</p>
+<p>对于第一个问题，指针的检查，是有必要的；如果想进一步确定<code>stk</code>是<code>Stack_new</code>得到的，可以修改<code>Struct_T</code>的实现，<br>在其中增加一个标识位，检查该特殊的标识位置即可；但仍然不够优雅；</p>
+<p>对于第二个问题，首先<code>const T* stk</code>是错误的写法，这种写法试图将<code>stk</code>声明为一个<strong>指向<code>Struct T</code>的常量实例指针</strong>，<br>因为<code>Stack_free</code>并不修改<code>*stk</code>。但是写法<code>const T* stk</code>将申明一个<strong>常量指针stk，指向一个Struct T实例</strong>。<br>这是由于语句<code>typedef struct T* T</code>将<code>struct T*</code>打包成一个类型，这个指针类型成了<code>const</code>的操作数<br>（const 修饰指针，指针就是常量，const修饰结构体，结构体实例就是常量）。由于函数调用值传递的特性，<br>所以无论有没有<code>const</code>，<code>Stack_free</code>都无法改变调用者的实参值。</p>
 
     </div>
 
@@ -381,18 +362,18 @@ ADT(抽象数据类型)使用不透明指针表示时，接口导出的类型是
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -426,12 +407,12 @@ ADT(抽象数据类型)使用不透明指针表示时，接口导出的类型是
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">10k</span>
+    <span title="站点总字数">15k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9 分钟</span>
+    <span title="站点阅读时长">14 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>
